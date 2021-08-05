@@ -1,0 +1,96 @@
+<?php
+	include_once "php-register.php";
+
+$success = "";
+$error = "";
+if (isset($_GET['del'])) {
+    $rid=$_GET['del'];
+    $deletedata = new DB_con();
+
+    $sql=$deletedata->delete($rid);
+	       if ($sql) {
+                 $success = "Data deleted Successfully";
+                 echo "<script>window.location.href='dashboard.php'</script>";
+	       } else {
+               $error = "Unbale to deleted make sure database conn";
+               echo "<script>window.location.href='dashboard.php'</script>";
+           }
+	   }
+?>
+<style>
+    #users {
+        font-family: Arial, Helvetica, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+      }
+      
+      #users td, #customers th {
+        border: 1px solid #ddd;
+        padding: 8px;
+        text-align: center;
+      }
+      
+      #users tr:nth-child(even){background-color: #f2f2f2;}
+      
+      #users tr:hover {background-color: #ddd;}
+      
+      #users th {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        text-align: center;
+        background-color: brown;
+        color: white;
+      }
+</style>
+<div class="col-sm-12 col-md-12 col-xs-12">
+   <div class="container">
+
+
+       <?php
+         if (!empty($error)) {
+             echo "<div class='alert alert-danger alert-dismissible'>
+             <button type='button' class='close' data-dismiss='alert'>&times;</button>$error
+             </div>";
+            } elseif (!empty($success)) {
+                echo "<div class='alert alert-success alert-dismissible'>
+                <button type='button' class='close' data-dismiss='alert'>&times;</button>$success
+                  </div>";
+                }
+                ?>
+  <?php
+  $fetchdata=new DB_con();
+  $sql=$fetchdata->fetchdata();
+  $cnt=1;
+while($row=mysqli_fetch_array($sql))
+{
+  ?>
+  <table id="users">
+      <tr>
+          <th>ID</th>
+          <th>NAME</th>
+          <th>Email-Id</th>
+          <th>ADDRESS</th>
+          <th>PHONE NUMBER</th>
+          <th>GENDER</th>
+          <th>BIRTHDAY</th>
+          <th>ACTION</th>
+        </tr>
+        <tr>
+          <td><?php echo htmlentities($row['id']);?></td>
+          <td><?php echo htmlentities($row['UserName']);?></td>
+          <td><?php echo htmlentities($row['EmailId']);?></td>
+          <td><?php echo htmlentities($row['Address']);?></td>
+          <td><?php echo htmlentities($row['ContactNumber']);?></td>
+          <td><?php echo htmlentities($row['Gender']);?></td>
+          <td><?php echo htmlentities($row['Birthday']);?></td>
+          <td>
+              <a href="dashboard.php?del=<?php echo htmlentities($row['id']);?>" class="card-link">Delete</a>
+              <a href="update-user.php?id=<?php echo htmlentities($row['id']);?>" class="card-link">Edit</a>
+            </td>
+          </tr>
+      </table>
+      <?php
+    $cnt++;
+} ?>
+    </div>
+</div>

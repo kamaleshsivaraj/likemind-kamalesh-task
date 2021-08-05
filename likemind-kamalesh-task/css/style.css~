@@ -1,0 +1,637 @@
+/* v-dashboard */
+.user {
+        font-size: medium;
+    font-family: -webkit-body;
+    border-collapse: initial;
+    padding-top: 1em;
+}
+.table {
+    border-collapse: collapse;
+    width: 100%;
+}
+.tableHeader {
+    text-align: inherit;
+    background-color: brown;
+    text-decoration-color: green;
+    color: white;
+}
+
+/* footer */
+.footerMain span {
+    letter-spacing: 1px;
+}
+.footerMain .row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+    padding-bottom: 3em;
+}
+.footerImg {
+    display: block;
+    margin-left: auto;
+    margin-right: 7em;
+    width: 100%;
+    padding-top: 10.8em;
+    padding-bottom: 0em;
+}
+.copyRg {
+    background-color: brown;
+    color: white;
+}
+.RegisterSection {
+    height: 100%;
+    margin-top: 7em;
+}
+.DashboardSection{
+    height: 100vh;
+    margin-top: 10em;
+}
+/* responsive for the media devices */
+
+@media only screen and (min-width: 2560px) {
+     /* products */
+     .imgGif {
+        float: left;
+        padding-right: 2em;
+    }
+    .latstProd {
+        height: 100vh;
+    }
+    .latstProd .latstProdTitle {
+        text-align: center;
+        font-size: 2.1em;
+        color: white;
+        padding-top: 3em;
+    }
+    .latstProd .latstProdCntxt {
+        text-align: center;
+        line-height: 26px;
+        color: white;
+    }
+    
+    
+    /* carousel */
+    .carousel-item {
+        height: 100vh;
+        min-height: 100px;
+        width: 100%;
+        background: no-repeat center center scroll;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    .firstSection .row {
+        margin-right: 0px;
+        margin-left: -31px;
+    }
+    .TtagL {
+        font-size: 50px;
+        margin-bottom: 4em;
+    }
+    .MStagL {
+        list-style-type: none;
+        text-align: left;
+        background-color: #00000052;
+        margin-bottom: 1em;
+        padding-top: 12px;
+        margin-left: 1em;
+        margin-right: -15em;
+    }
+    .MStagL li {
+        font-size: 40px;
+        text-align: left;
+        line-height: 2 !important;    
+    }
+    .TtagR {
+        font-size: 50px;
+        padding-bottom: 4em;
+    }
+    .MStagR {
+        list-style-type: none;
+        text-align: left;
+        background-color: #00000052;
+        margin-bottom: 1em;
+        padding-top: 12px;
+        margin-left: 1em;
+        margin-right: -15em;
+    }
+    .MStagR li {
+        font-size: 38px;
+        text-align: left;
+        line-height: 2 !important;  
+    }
+    .ReadMR {
+        outline-style: solid;
+        margin-left: 1em;
+        font-size: 2em;
+    }
+    .secReadMRL {
+        outline-style: solid;
+        margin-left: 1em;
+        font-size: 2em;
+    
+    }
+    .thirReadMRR {
+        outline-style: solid;
+        margin-top: 0em;
+        margin-left: 0em;
+    }
+}
+@media only screen and (min-width: 1440px) {
+     /* products */
+     .imgGif {
+        float: left;
+        padding-right: 2em;
+    }
+    .latstProd {
+        height: 100vh;
+    }
+    .latstProd .latstProdTitle {
+        text-align: center;
+        font-size: 2.1em;
+        color: white;
+        padding-top: 3em;
+    }
+    .latstProd .latstProdCntxt {
+        text-align: center;
+        line-height: 26px;
+        color: white;
+    }
+    /* carousel */
+    .carousel-item {
+        height: 100vh;
+        min-height: 100px;
+        width: 100%;
+        background: no-repeat center center scroll;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    .firstSection .row {
+        margin-right: 0px;
+        margin-left: -31px;
+    }
+    .TtagL {
+        font-size: 22px;
+        margin-bottom: 4em;
+    }
+    .MStagL {
+        list-style-type: none;
+        text-align: left;
+        background-color: #00000052;
+        margin-bottom: 1em;
+        padding-top: 12px;
+        margin-left: 1em;
+        margin-right: -15em;
+    }
+    .MStagL li {
+        font-size: 22px;
+        text-align: left;
+        line-height: 2 !important;    
+    }
+    .TtagR {
+        font-size: 23px;
+        padding-bottom: 4em;
+    }
+    .MStagR {
+        list-style-type: none;
+        text-align: left;
+        background-color: #00000052;
+        margin-bottom: 1em;
+        padding-top: 12px;
+        margin-left: 1em;
+        margin-right: -11em;
+    }
+    .MStagR li {
+        font-size: 22px;
+        text-align: left;
+        line-height: 2 !important;  
+    }
+    .ReadMR {
+        outline-style: solid;
+        margin-left: 9em;
+    }
+    .secReadMRL {
+        outline-style: solid;
+        margin-left: 8em;
+    }
+    .thirReadMRR {
+        outline-style: solid;
+        margin-top: 0em;
+        margin-left: 0em;
+    }
+}
+@media only screen and (min-width: 1024px) {
+     /* products */
+     .imgGif {
+        float: left;
+        padding-right: 2em;
+    }
+    .latstProd {
+        height: 100vh;
+    }
+    .latstProd .latstProdTitle {
+        text-align: center;
+        font-size: 2.1em;
+        color: white;
+        padding-top: 3em;
+    }
+    .latstProd .latstProdCntxt {
+        text-align: center;
+        line-height: 26px;
+        color: white;
+    }
+    
+    /* carousel */
+    .carousel-item {
+        height: 100vh;
+        min-height: 100px;
+        width: 100%;
+        background: no-repeat center center scroll;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    .firstSection .row {
+        margin-right: 0px;
+        margin-left: -31px;
+    }
+    .TtagL {
+        font-size: 20px;
+        text-align: left;
+        margin-bottom: 1em;
+        margin-top: -3em;
+    }
+    .MStagL {
+        list-style-type: none;
+        text-align: left;
+        background-color: #00000052;
+        margin-bottom: 4em;
+        padding-left: 13px;
+    }
+    .MStagL li {
+        font-size: 13px;
+        text-align: left;
+        line-height: 2 !important;
+        padding-left: -9px;
+    }
+    .TtagR {
+        font-size: 23px;
+        padding-bottom: 4em;
+    }
+    .MStagR {
+        list-style-type: none;
+        text-align: left;
+        background-color: #00000052;
+        margin-left: 0em;
+        margin-right: -7em;
+    }
+    .MStagR li {
+        font-size: 18px;
+        text-align: left;
+    }
+    .ReadMR {
+        outline-style: solid;
+    }
+    .secReadMRL {
+        margin-top: 13em;
+        outline-style: solid;
+        margin-left: 11em;
+        float: none;
+    }
+    .thirReadMRR {
+        outline-style: solid;
+        margin-top: 0em;
+        margin-left: 0em;
+    }
+}
+@media only screen and (min-width: 768px) {
+     /* products */
+     .imgGif {
+        float: left;
+        padding-right: 2em;
+    }
+    .latstProd {
+        height: 100vh;
+    }
+    .latstProd .row {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        margin-right: -15px;
+        margin-left: -15px;
+        margin-bottom: 0.5em;
+    }
+    .latstProd .latstProdTitle {
+        text-align: center;
+        font-size: 2.1em;
+        color: white;
+        padding-top: 3em;
+    }
+    .latstProd .latstProdCntxt {
+        text-align: center;
+        line-height: 26px;
+        color: white;
+    }
+    
+    /* carousel */
+    .carousel-item {
+        height: 100vh;
+        min-height: 100px;
+        width: 100%;
+        background: no-repeat center center scroll;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    .firstSection .row {
+        margin-right: 0px;
+        margin-left: -31px;
+    }
+    .TtagL {
+        font-size: 16px;
+        text-align: left;
+        margin-bottom: 0em;
+        margin-top: -8em;
+    }
+    .MStagL {
+        list-style-type: none;
+        text-align: left;
+        background-color: #00000052;
+        margin-bottom: 4em;
+        padding-left: 13px;
+        margin-left: 0em;
+        margin-right: -12em;
+    }
+    .MStagL li {
+        font-size: 9px;
+        text-align: left;
+        line-height: 2 !important;
+        padding-left: 1px;
+    }
+    .TtagR {
+        font-size: 23px;
+    }
+    .MStagR {
+        list-style-type: none;
+        text-align: left;
+        background-color: #00000052;
+    }
+    .MStagR li {
+        font-size: 14px;
+        text-align: left;
+    }
+    .ReadMR {
+        outline-style: solid;
+    }
+    .secReadMRL {
+        outline-style: solid;
+        margin-left: 1em;
+    }
+    .thirReadMRR {
+        outline-style: solid;
+        margin-top: 0em;
+        margin-left: 0em;
+    }
+}
+@media only screen and (min-width: 425px) {
+     /* products */
+     .imgGif {
+        float: left;
+        padding-right: 2em;
+    }
+    .latstProd {
+        height: 100vh;
+    }
+    .latstProd .latstProdTitle {
+        text-align: center;
+        font-size: 2.1em;
+        color: white;
+        padding-top: 3em;
+    }
+    .latstProd .latstProdCntxt {
+        text-align: center;
+        line-height: 26px;
+        color: white;
+    }
+   
+    /* carousel */
+    .carousel-item {
+        height: 100vh;
+        min-height: 100px;
+        width: 100%;
+        background: no-repeat center center scroll;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    .firstSection .row {
+        margin-right: 0px;
+        margin-left: -31px;
+    }
+    .TtagL {
+        font-size: 20px;
+        margin-bottom: 1em;
+    }
+    .MStagL {
+        list-style-type: none;
+        text-align: left;
+        background-color: #00000052;
+        margin-bottom: 4em;
+        padding-left: 13px;
+    }
+    .MStagL li {
+        font-size: 13px;
+    }
+    .TtagR {
+        font-size: 21px;
+        margin-bottom: 3em;
+    }
+    .MStagR {
+        list-style-type: none;
+        text-align: left;
+        background-color: #00000052;
+        }
+    .MStagR li {
+        font-size: 14px;
+        text-align: left;
+    }
+    .ReadMR {
+        outline-style: solid;
+    }
+    .secReadMRL {
+        outline-style: solid;
+        margin-left: 1em;
+    }
+    .thirReadMRR {
+        outline-style: solid;
+        margin-top: 7em;
+        margin-left: 0em;
+        margin-bottom: 6em;
+    }
+}
+@media only screen and (min-width: 375px) {
+     /* products */
+     .imgGif {
+        float: left;
+        padding-right: 2em;
+    }
+    .latstProd {
+        height: 100vh;
+    }
+    .latstProd .latstProdTitle {
+        text-align: center;
+        font-size: 2.1em;
+        color: white;
+        padding-top: 3em;
+    }
+    .latstProd .latstProdCntxt {
+        text-align: center;
+        line-height: 26px;
+        color: white;
+    }
+    
+    /* carousel */
+    .carousel-item {
+        height: 100vh;
+        min-height: 100px;
+        width: 100%;
+        background: no-repeat center center scroll;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    .firstSection .row {
+        margin-right: 0px;
+        margin-left: -31px;
+    }
+    .TtagL {
+        font-size: 18px;
+        margin-bottom: 1em;
+    }
+    .MStagL {
+        list-style-type: none;
+        text-align: left;
+        background-color: #00000052;
+        margin-bottom: 4em;
+        padding-left: 13px;
+    }
+    .MStagL li {
+        font-size: 12px;
+    }
+    .TtagR {
+        font-size: 21px;
+        margin-bottom: 3em;
+    }
+    .MStagR {
+        list-style-type: none;
+        text-align: left;
+        background-color: #00000052;
+        }
+    .MStagR li {
+        font-size: 14px;
+        text-align: left;
+    }
+    .ReadMR {
+        outline-style: solid;
+    }
+    .secReadMRL {
+        outline-style: solid;
+        margin-left: 1em;
+        float: none;
+    }
+    .thirReadMRR {
+        outline-style: solid;
+        margin-top: 7em;
+        margin-left: 0em;
+        margin-bottom: 6em;
+    }
+}
+@media only screen and (min-width: 320px) {
+    /* products */
+    .imgGif {
+        float: left;
+        padding-right: 2em;
+    }
+    .latstProd {
+        height: 100vh;
+    }
+    .latstProd .latstProdTitle {
+        text-align: center;
+        font-size: 2.1em;
+        color: white;
+        padding-top: 3em;
+    }
+    .latstProd .latstProdCntxt {
+        text-align: center;
+        line-height: 26px;
+        color: white;
+    }
+    
+    /* carousel */
+    .carousel-item {
+        height: 100vh;
+        min-height: 100px;
+        width: 100%;
+        background: no-repeat center center scroll;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+    }
+    .firstSection .row {
+        margin-right: 0px;
+        margin-left: -31px;
+    }
+    .TtagL {
+        font-size: 18px;
+        margin-bottom: 1em;
+    }
+    .MStagL {
+        list-style-type: none;
+        text-align: left;
+        background-color: #00000052;
+        margin-bottom: 4em;
+        padding-left: 13px;
+    }
+    .MStagL li {
+        font-size: 12px;
+    }
+    .TtagR {
+        font-size: 18px;
+        margin-bottom: 1em;
+    }
+    .MStagR {
+        list-style-type: none;
+        text-align: left;
+        background-color: #00000052;
+        padding-left: 13px;
+    }
+    .MStagR li {
+        font-size: 12px;
+    }
+    .ReadMR {
+        outline-style: solid;
+    }
+    .secReadMRL {
+        outline-style: solid;
+        margin-left: 1em;
+    }
+    .thirReadMRR {
+        outline-style: solid;
+        margin-top: 0;
+        margin-left: 2em;
+    }
+}
