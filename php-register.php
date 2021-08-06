@@ -17,27 +17,21 @@ echo "Failed to connect to MySQL: " . mysqli_connect_error();
  }
 }
 
-public function registration($username,$emailid,$contactno,$address,$gender,$birthday,$password)
-	{
-	$ret=mysqli_query($this->dbh,"insert into users(UserName,EmailId,ContactNumber,Address,Gender,Birthday,Password) VALUES ('$username','$emailid','$contactno','$address','$gender','$birthday','$password')");
-	return $ret;
-	}
-
 public function fetchdata()
 	{
 	$result=mysqli_query($this->dbh,"select * from users");
 	return $result;
 	}
 
-public function fetchonerecord($userid)
+public function fetchonerecord($id)
 	{
-	$oneresult=mysqli_query($this->dbh,"select * from users where id=$userid");
+	$oneresult=mysqli_query($this->dbh,"select * from users where id=$id");
 	return $oneresult;
 	}
 
-public function update($username,$emailid,$contactno,$address,$gender,$birthday,$password,$userid)
+public function update($username,$emailid,$contactno,$address,$gender,$birthday,$password,$id)
 	{
-	$updaterecord=mysqli_query($this->dbh,"update users set UserName='$username',EmailId='$emailid',ContactNumber='$contactno',Address='$address',Gender='$gender',Birthday='$birthday',Password='$password' where id='$userid' ");
+	$updaterecord=mysqli_query($this->dbh,"update users set UserName='$username',EmailId='$emailid',ContactNumber='$contactno',Address='$address',Gender='$gender',Birthday='$birthday',Password='$password' where id='$id' ");
 	return $updaterecord;
 	}
 
@@ -47,11 +41,6 @@ public function delete($rid)
 	return $deleterecord;
 	}
 
-public function signin($emailid,$password)
-	{
-		$result=mysqli_query($this->dbh,"select id,UserName from users where EmailId='$emailid' and Password='$password'");
-		return $result;
-	}
    
 }
 ?>

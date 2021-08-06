@@ -1,13 +1,14 @@
 <?php
-	include_once "php-register.php";
+  define('PROJECT_ROOT_PATH', __DIR__);
+	include_once (PROJECT_ROOT_PATH. '/classes/User.class.php');
 
-	$userObj = new DB_con();
+	$userObj = new User();
 
 
 	$success = "";
 	$error = "";
 
-if (isset($_POST['registration'])) {
+if (isset($_POST['submit'])) {
 		$username  = $_POST['username'];
 		$emailid = $_POST['emailid'];
 		$contactno = $_POST['contactno'];
@@ -22,7 +23,7 @@ if (isset($_POST['registration'])) {
                  echo "<script>window.location.href='dashboard.php'</script>";
 	       } else {
 		  $error = "Registration failed  try again!";
-          echo "<script>window.location.href='index.php'</script>";
+          // echo "<script>window.location.href='register.php'</script>";
 	      }
 	   }
 ?>
@@ -88,7 +89,7 @@ if (isset($_POST['registration'])) {
           <input type="text" name="password" placeholder="password" class="form-control"><br>
           <span class="form-error" id="password-errormsg"></span>
 	</div>
-        <button class="btn btn" type="submit" id="submit" value="Submit" name="registration">Submit</button>
+        <button class="btn btn" type="submit" id="submit" value="Submit" name="submit">Submit</button>
     </div>
     <div class="control-group">
 		<!-- Button -->

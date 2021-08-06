@@ -1,21 +1,26 @@
 <?php
-	include_once "php-register.php";
+	define('PROJECT_ROOT_PATH', __DIR__);
+  include_once (PROJECT_ROOT_PATH. '/classes/User.class.php');
 
-$success = "";
-$error = "";
-if (isset($_GET['del'])) {
-    $rid=$_GET['del'];
-    $deletedata = new DB_con();
+  $success = "";
+  $error = "";
 
-    $sql=$deletedata->delete($rid);
-	       if ($sql) {
-                 $success = "Data deleted Successfully";
-                 echo "<script>window.location.href='dashboard.php'</script>";
-	       } else {
-               $error = "Unbale to deleted make sure database conn";
-               echo "<script>window.location.href='dashboard.php'</script>";
-           }
-	   }
+  $userObj = new User();
+  $result = $userObj->getUserAll();
+  // if (isset($_GET['del'])) {
+  //   $rid=$_GET['del'];
+  //   $deletedata = $userObj->deleteUser();
+
+  //   $sql=$deletedata->deleteUser($id);
+	//        if ($sql) {
+  //                $success = "Data deleted Successfully";
+  //                echo "<script>window.location.href='dashboard.php'</script>";
+	//        } else {
+  //              $error = "Unbale to deleted make sure database conn";
+  //              echo "<script>window.location.href='dashboard.php'</script>";
+  //          }
+	//    }
+
 ?>
 
 <div class="col-sm-12 col-md-12 col-xs-12">
@@ -35,12 +40,7 @@ if (isset($_GET['del'])) {
                 ?>
 
  <div class="user pt-2">
-   <table style="
-    border-collapse: collapse;
-    width: 100%;
-    border-collapse: inherit;
-    border: 1px solid #ddd; 
-     ">
+   <table class="table table-bordered">
     <div class="tableHeader">
       <tr> 
           <th>ID</th>
@@ -54,16 +54,13 @@ if (isset($_GET['del'])) {
 
         </tr>
       </div>
-  <?php
-  $fetchdata=new DB_con();
-  $sql=$fetchdata->fetchdata();
-  $cnt=1;
-while($row=mysqli_fetch_array($sql))
-{
-  ?>
-  
-        <tr>
-          <td><?php echo htmlentities($row['id']);?></td>
+      <tr>
+        <?php
+        while ($row = mysqli_fetch_assoc($result)) {
+      
+        ?>
+        
+        <td><?php echo htmlentities($row['id']);?></td>
           <td><?php echo htmlentities($row['UserName']);?></td>
           <td><?php echo htmlentities($row['EmailId']);?></td>
           <td><?php echo htmlentities($row['Address']);?></td>
@@ -75,10 +72,7 @@ while($row=mysqli_fetch_array($sql))
               <a href="update-user.php?id=<?php echo htmlentities($row['id']);?>" class="card-link">Edit</a>
             </td>
           </tr>
-      
- <?php
-   $cnt++;
- } ?>
+      <?php } ?>
          </table>
         </div>
        </div>

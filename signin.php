@@ -27,7 +27,7 @@
     <!-- bootstrap js -->
     <script src="./js/bootstrap.js"></script>
      <!-- script js -->
-     <script src=".js/script"></script>
+     <script src="./js/script.js"></script>
 </body>
 
 <!-- Footer -->

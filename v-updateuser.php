@@ -1,12 +1,15 @@
 <?php
-include_once("php-register.php");
-$success ="";
-$error="";
+define('PROJECT_ROOT_PATH', __DIR__);
+include_once (PROJECT_ROOT_PATH. '/classes/User.class.php');
 
-$updatedata=new DB_con();
+$success = "";
+$error = "";
+
+$updatedata = new User();
+
 if(isset($_POST['update']))
 {
-$userid=intval($_GET['id']);
+$id=intval($_GET['id']);
 
 		$username  = $_POST['username'];
 		$emailid = $_POST['emailid'];
@@ -16,7 +19,7 @@ $userid=intval($_GET['id']);
 		$birthday = $_POST['birthday'];
 		$password = md5($_POST['password']);
 
-$sql=$updatedata->update($username,$emailid,$contactno,$address,$gender,$birthday,$password,$userid);
+$sql=$updatedata->updateUser($username,$emailid,$contactno,$address,$gender,$birthday,$password,$id);
 if($sql){
     $success = "Record Updated successfully";
 echo "<script>window.location.href='dashboard.php'</script>";
@@ -43,9 +46,9 @@ echo "<script>window.location.href='dashboard.php'</script>";
       ?>
 <?php
 // Get the userid
-$userid=intval($_GET['id']);
-$onerecord=new DB_con();
-$sql=$onerecord->fetchonerecord($userid);
+$id=intval($_GET['id']);
+$onerecord=new User();
+$sql=$onerecord->getUser($id);
 $cnt=1;
 while($row=mysqli_fetch_array($sql))
   {

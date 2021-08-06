@@ -1,29 +1,32 @@
 <?php
-include_once("php-register.php");
-$success ="";
-$error="";
+  define('PROJECT_ROOT_PATH', __DIR__);
+  include_once (PROJECT_ROOT_PATH. '/classes/User.class.php');
 
-$logindata=new DB_con();
+  if(isset($_SESSION['id'])) {
+		header("Location:signin.php");
+	}
 
-if(isset($_POST['signin']))
+  $logindata = new User();
+
+	$success ="";
+	$error="";
+
+if(isset($_POST['submit']))
 {
-	$emailid = $_POST['emailid'];
-	$password = md5($_POST['password']);
+	$newdata['emailid'] = $_POST['emailid'];
+	$newdata['password'] = md5($_POST['password']);
 
-$sql=$logindata->signin($emailid,$password);
-$num=mysqli_fetch_array($sql);
-if($num>0){
-	$_SESSION['userid']=$num['id'];
-	$_SESSION['username']=$num['UserName'];
+	if ($logindata->signin($newdata)) {
+		if (!isset($_SESSION['id'])) {
+			header("Location:dashboard.php");
+			$success = "Sign In success";
 
-    $success = "success login";
-echo "<script>window.location.href='dashboard.php'</script>";
-} else {
-    $error = "error";
-echo "<script>window.location.href='signin.php'</script>";
-}
-
-
+		} else {  
+			header("Location:signin.php");
+		}
+	} else {
+		$error = "Incorrect Email or Password";
+	}
 }
 ?>
 
@@ -56,7 +59,7 @@ echo "<script>window.location.href='signin.php'</script>";
 	<div>
 		<div class="row" style="margin-top:1%">
 			<div class="col-md-8">
-			<input class="btn btn" type="submit" name="signin" value="Signin">
+				<button class="btn btn" type="submit" id="submit" value="Submit" name="submit">Submit</button>
 			</div>
 		</div>
 		<div class="control-group">
