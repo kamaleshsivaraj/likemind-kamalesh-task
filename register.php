@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Register | Nilgiris Likemind Technologies</title>
         <!-- bootstrap-4 css -->
-    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
         <!-- custom-css -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
     <!-- header -->
@@ -23,9 +23,9 @@
     <!-- insert jquery -->
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <!-- bootstrap js -->
-    <script src="./js/bootstrap.js"></script>
+    <script src="./assets/js/bootstrap.js"></script>
      <!-- script js -->
-     <script src="./js/script.js"></script>
+     <script src="./assets/js/script.js"></script>
 </body>
 
 <!-- Footer -->
