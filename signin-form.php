@@ -1,31 +1,29 @@
 <?php
-  define('PROJECT_ROOT_PATH', __DIR__);
-  include_once (PROJECT_ROOT_PATH. '/classes/User.class.php');
+define('PROJECT_ROOT_PATH', __DIR__);
+include_once (PROJECT_ROOT_PATH. '/classes/User.class.php');
 
-  if(isset($_SESSION['id'])) {
-		header("Location:signin.php");
-	}
 
-  $logindata = new User();
+$success ="";
+$error="";
 
-	$success ="";
-	$error="";
+$logindata=new User();
 
 if(isset($_POST['submit']))
 {
-	$newdata['emailid'] = $_POST['emailid'];
-	$newdata['password'] = md5($_POST['password']);
+	$emailid = $_POST['emailid'];
+	$password = md5($_POST['password']);
 
-	if ($logindata->signin($newdata)) {
-		if (!isset($_SESSION['id'])) {
-			header("Location:dashboard.php");
-			$success = "Sign In success";
+	$sql=$logindata->signin($emailid,$password);
+	$num=mysqli_fetch_array($sql);
+	if($num>0){
+		$_SESSION['id']=$num['id'];
+		$_SESSION['username']=$num['UserName'];
 
-		} else {  
-			header("Location:signin.php");
-		}
+		$success = "success login";
+	echo "<script>window.location.href='dashboard.php'</script>";
 	} else {
-		$error = "Incorrect Email or Password";
+		$error = "error";
+	echo "<script>window.location.href='signin.php'</script>";
 	}
 }
 ?>

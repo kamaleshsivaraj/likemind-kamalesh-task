@@ -17,6 +17,7 @@
     </header>
     <!-- carousel have 3image -->
     <section class="DashboardSection">
+        <?php include('v-userdashboard.php') ?>
     	    <?php include('v-dashboard.php') ?>
     </section>
 

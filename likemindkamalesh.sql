@@ -19,3 +19,4 @@ CREATE TABLE `users` (
   `Password` varchar(35) NOT NULL,
   `PostingDate` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+

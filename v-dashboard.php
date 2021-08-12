@@ -1,4 +1,4 @@
-<?php
+<?php 
 	define('PROJECT_ROOT_PATH', __DIR__);
   include_once (PROJECT_ROOT_PATH. '/classes/User.class.php');
 
@@ -7,19 +7,18 @@
 
   $userObj = new User();
   $result = $userObj->getUserAll();
-  // if (isset($_GET['del'])) {
-  //   $rid=$_GET['del'];
-  //   $deletedata = $userObj->deleteUser();
-
-  //   $sql=$deletedata->deleteUser($id);
-	//        if ($sql) {
-  //                $success = "Data deleted Successfully";
-  //                echo "<script>window.location.href='dashboard.php'</script>";
-	//        } else {
-  //              $error = "Unbale to deleted make sure database conn";
-  //              echo "<script>window.location.href='dashboard.php'</script>";
-  //          }
-	//    }
+  if (isset($_GET['del'])) {
+    $id=$_GET['del'];
+  
+    $sql=$userObj->deleteUser($id);
+    if ($sql) {
+      $success = "Data deleted Successfully";
+      echo "<script>window.location.href='dashboard.php'</script>";
+    } else {
+      $error = "Unbale to deleted make sure database conn";
+      echo "<script>window.location.href='dashboard.php'</script>";
+    }
+  }
 
 ?>
 
